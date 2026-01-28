@@ -1,0 +1,18 @@
+[shell]
+working_directory = "/home/taha/alkonos"
+
+[keyboard]
+bindings = [
+  # real terminal ctrl behavior
+  { key = "C", mods = "Control", chars = "\u0003" }, # Ctrl+C
+  { key = "D", mods = "Control", chars = "\u0004" }, # Ctrl+D
+  { key = "L", mods = "Control", chars = "\u000c" }, # Ctrl+L
+  { key = "Z", mods = "Control", chars = "\u001a" }, # Ctrl+Z
+
+  # clipboard like macOS
+  { key = "C", mods = "Super", action = "Copy" },
+  { key = "V", mods = "Super", action = "Paste" },
+
+  # shift+enter
+  { key = "Return", mods = "Shift", chars = "\x1b\r" },
+]
