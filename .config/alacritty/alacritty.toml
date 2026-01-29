@@ -7,7 +7,7 @@ import = []
 TERM = "xterm-256color"
 AWS_REGION = "us-east-1"
 
-# Yazelix shell integration - DO NOT REMOVE
+# Yazelix shell integration
 [terminal.shell]
 program = "sh"
 args = ["-c", "exec $HOME/.config/yazelix/shells/posix/start_yazelix.sh"]
@@ -15,22 +15,15 @@ args = ["-c", "exec $HOME/.config/yazelix/shells/posix/start_yazelix.sh"]
 [window]
 padding = { x = 8, y = 6 }
 dynamic_padding = true
-decorations = "Full"  # Changed from "Buttonless" for Linux - allows resize/fullscreen
+decorations = "Full" 
 opacity = 0.92
 blur = true
 resize_increments = true
-# option_as_alt = "Both"  # Removed - macOS specific
-# startup_mode = "Fullscreen"  # Removed - may interfere with yazelix window management
 class = { instance = "yazelix", general = "com.yazelix.Yazelix" }
 title = "Yazelix - Alacritty"
 
 [font]
 size = 22.5
-normal = { family = "FiraCode Nerd Font", style = "Regular" }
-bold = { family = "FiraCode Nerd Font", style = "Bold" }
-italic = { family = "FiraCode Nerd Font", style = "Italic" }
-bold_italic = { family = "FiraCode Nerd Font", style = "Bold Italic" }
-builtin_box_drawing = true
 
 [mouse]
 hide_when_typing = true
@@ -43,6 +36,3 @@ multiplier = 5
 key = "Return"
 mods = "Shift"
 chars = "\n"
-
-[colors]
-primary = { background = "#000000", foreground = "#ffffff" }
