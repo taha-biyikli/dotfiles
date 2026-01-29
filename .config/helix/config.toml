@@ -1,0 +1,13 @@
+theme = "ayu_dark"
+
+[editor]
+mouse = false
+line-number = "relative"
+clipboard-provider = "system"
+
+[editor.soft-wrap]
+enable = true
+
+[keys.normal]
+# Yazelix sidebar integration - reveal current file in Yazi sidebar
+A-y = ":sh nu ~/.config/yazelix/nushell/scripts/integrations/reveal_in_yazi.nu \"%{buffer_name}\""

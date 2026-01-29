@@ -1,18 +1,48 @@
+# Custom Alacritty configuration with Yazelix integration
+
 [general]
-working_directory = "~/alkonos"
+import = []
 
-[keyboard]
-bindings = [
-  # real terminal ctrl behavior
-  { key = "C", mods = "Control", chars = "\u0003" }, # Ctrl+C
-  { key = "D", mods = "Control", chars = "\u0004" }, # Ctrl+D
-  { key = "L", mods = "Control", chars = "\u000c" }, # Ctrl+L
-  { key = "Z", mods = "Control", chars = "\u001a" }, # Ctrl+Z
+[env]
+TERM = "xterm-256color"
+AWS_REGION = "us-east-1"
 
-  # clipboard like macOS
-  { key = "C", mods = "Super", action = "Copy" },
-  { key = "V", mods = "Super", action = "Paste" },
+# Yazelix shell integration - DO NOT REMOVE
+[terminal.shell]
+program = "sh"
+args = ["-c", "exec $HOME/.config/yazelix/shells/posix/start_yazelix.sh"]
 
-  # shift+enter
-  { key = "Return", mods = "Shift", chars = "\x1b\r" },
-]
+[window]
+padding = { x = 8, y = 6 }
+dynamic_padding = true
+decorations = "Full"  # Changed from "Buttonless" for Linux - allows resize/fullscreen
+opacity = 0.92
+blur = true
+resize_increments = true
+# option_as_alt = "Both"  # Removed - macOS specific
+# startup_mode = "Fullscreen"  # Removed - may interfere with yazelix window management
+class = { instance = "yazelix", general = "com.yazelix.Yazelix" }
+title = "Yazelix - Alacritty"
+
+[font]
+size = 22.5
+normal = { family = "FiraCode Nerd Font", style = "Regular" }
+bold = { family = "FiraCode Nerd Font", style = "Bold" }
+italic = { family = "FiraCode Nerd Font", style = "Italic" }
+bold_italic = { family = "FiraCode Nerd Font", style = "Bold Italic" }
+builtin_box_drawing = true
+
+[mouse]
+hide_when_typing = true
+
+[scrolling]
+history = 100000
+multiplier = 5
+
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\n"
+
+[colors]
+primary = { background = "#000000", foreground = "#ffffff" }
